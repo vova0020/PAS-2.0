@@ -2,11 +2,9 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import React, { useState } from 'react'
 import ForwardIcon from '@mui/icons-material/Forward';
 import PaddonsTable from './paddonsTable';
-import RouteList from '../../../components/routeList';
 
-type Props = {}
 
-export default function TableOperators({ }: Props) {
+export default function TableOperators() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => (event: React.MouseEvent | React.KeyboardEvent) => {
@@ -16,6 +14,13 @@ export default function TableOperators({ }: Props) {
     }
     setIsDrawerOpen(open);
   };
+  const rows = [
+    {prioritet: 1, artikle: 'Afs1245', datailName:'Полкка', size:'420x300', coll:600, complite:10},
+    {prioritet: 2, artikle: '#3411', datailName:'Тумбочка', size:'420x300', coll:800, complite:0},
+    {prioritet: 3, artikle: '@1341', datailName:'Стол', size:'6820x700', coll:400, complite:0},
+    {prioritet: 4, artikle: '!314', datailName:'Шкаф', size:'400x500', coll:100, complite:0},
+    {prioritet: 5, artikle: '~3241', datailName:'Кухня', size:'1200x880', coll:300, complite:0}
+  ]
   
 
   return (
@@ -44,24 +49,24 @@ export default function TableOperators({ }: Props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {/* {rows.map((row) => ( */}
+            {rows.map((row) => (
             <TableRow
-              //   key={row.name}
+                key={row.datailName}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               {/* <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell> */}
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>1</TableCell>
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>f1d1z</TableCell>
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>Полка Шкаф</TableCell>
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>302х864</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.prioritet}</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.artikle}</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.datailName}</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.size}</TableCell>
               <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}><Button>Открыть чертеж</Button></TableCell>
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>400</TableCell>
-              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>0</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.coll}</TableCell>
+              <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}>{row.complite}</TableCell>
               <TableCell align="center" style={{ wordWrap: 'break-word', border: '1px solid black' }}><Button onClick={toggleDrawer(true)}><ForwardIcon fontSize='large' /></Button></TableCell>
             </TableRow>
-            {/*    ))} */}
+               ))}
           </TableBody>
         </Table>
       </TableContainer>

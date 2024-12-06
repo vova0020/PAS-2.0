@@ -14,10 +14,13 @@ export default function OperatorPages() {
 
     return (
         <div style={{ width: '100%', padding: '10px' }}>
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding:'10px' }}>
+            <div style={{ width: '100%', textAlign: 'center' }}>
+                <h1>BHX</h1>
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px' }}>
                     {/* <div> */}
-                    <div style={{  padding:'10px', marginRight:'50px' }}>
+                    <div style={{ padding: '10px', marginRight: '50px' }}>
                         <Button
                             variant="contained"
                             style={{ whiteSpace: 'pre-line', textAlign: 'center' }}
@@ -27,7 +30,7 @@ export default function OperatorPages() {
                             {"\n"}заказа отбракованных  {"\n"} деталей
                         </Button>
                     </div>
-                    <div style={{  padding:'10px' }}>
+                    <div style={{ padding: '10px' }}>
                         <Button
                             variant="contained"
                             style={{ whiteSpace: 'pre-line', textAlign: 'center' }}
@@ -37,17 +40,19 @@ export default function OperatorPages() {
                             Запустить
                         </Button>
                     </div>
-                    <div style={{  padding:'10px' }}>
+                    <div style={{ padding: '10px' }}>
                         <Button
                             variant="contained"
                             color="error"
                         >
-                            Сломался <CancelIcon/> 
+                            Сломался <CancelIcon />
                         </Button>
                     </div>
                     {/* </div> */}
                 </div>
-                <div style={{ width: '35%' }}><StatInfo /></div>
+                <div style={{ width: '35%' }}>
+                    <StatInfo />
+                </div>
             </div>
             <div style={{ width: '100%', marginTop: '10px', }}>
                 <TableOperators />
